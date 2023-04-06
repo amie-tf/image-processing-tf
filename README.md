@@ -2,11 +2,11 @@
 
 Deployment Steps for Demo:
 
-## Github
+#### Github
 
 -   Clone project to your github repo
 
-## Google Cloud
+#### Google Cloud
 
 -   Create a new project on Google Cloud with [billing enabled](https://cloud.google.com/billing/docs/how-to/modify-project)
 
@@ -16,7 +16,7 @@ Deployment Steps for Demo:
     gcloud builds submit
     ```
 
-## Terraform Cloud (Automated VCS Deployment)
+#### Terraform Cloud (Automated VCS Deployment)
 
 -   Create account in Terraform Cloud
 
@@ -24,6 +24,6 @@ Deployment Steps for Demo:
 
 -   Connect to Workspace with VCS (Github) and link to your Github repo
 
-## Source
+##### Source
 
 -   Modified from [Serverless Expedition Example](https://github.com/GoogleCloudPlatform/serverless-expeditions/tree/main/terraform-serverless)
