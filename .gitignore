@@ -4,6 +4,7 @@ modules/
 *.tfstate
 terraform.*
 .terraform.*
+.terraform
 
 #venv
 venv
