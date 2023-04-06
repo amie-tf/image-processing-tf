@@ -1,6 +1,8 @@
 # Image Processing Service
 
-Deployment Steps for Demo:
+Architecture Diagram:
+
+Deployment Steps [Demo Only]:
 
 #### Github
 
@@ -20,7 +22,7 @@ Deployment Steps for Demo:
 
 -   Create account in Terraform Cloud
 
--   Set up Project and Workspace;
+-   Set up Project and Workspace
 
 -   Connect to Workspace with VCS (Github) and link to your Github repo
 
