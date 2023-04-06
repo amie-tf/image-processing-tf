@@ -1,8 +1,8 @@
 # Image Processing Service
 
-Architecture Diagram:
+##`Architecture Diagram:`
 
-Deployment Steps [Demo Only]:
+##`Deployment Steps [Demo Only]:`
 
 #### Github
 
