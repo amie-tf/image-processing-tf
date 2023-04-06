@@ -28,4 +28,4 @@
 
 #### Source
 
--   Modified from [Serverless Expedition Example](https://github.com/GoogleCloudPlatform/serverless-expeditions/tree/main/terraform-serverless)
+-   Inspired By [Serverless Expedition](https://github.com/GoogleCloudPlatform/serverless-expeditions/tree/main/terraform-serverless)

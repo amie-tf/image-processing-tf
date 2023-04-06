@@ -8,7 +8,8 @@ terraform {
 }
 
 provider "google" {
-  project     = var.project
+  project = var.project
+  # credentials = "./sa-key.json"
   credentials = var.gcp_credentials
 }
 
