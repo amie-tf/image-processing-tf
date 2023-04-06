@@ -1,0 +1,12 @@
+
+# Terraform
+modules/
+*.tfstate
+terraform.*
+.terraform
+
+# Temporary function archives
+temp/
+
+# creds
+**/sa-key.json

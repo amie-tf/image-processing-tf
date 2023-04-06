@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css"
+        />
+    </head>
+    <style>
+        body {
+            color: darkslategrey;
+        }
+        .column img {
+            max-height: 400px;
+        }
+
+        .header {
+            margin-top: 3rem;
+            text-align: center;
+            background-color: black;
+            color: #844fba;
+            padding: 4rem 4rem;
+        }
+
+        .header-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 800px;
+            /* gap: 4rem; */
+        }
+
+        .logo {
+            width: 12rem;
+        }
+
+        .row {
+            padding: 2rem;
+        }
+
+        .main-content {
+            min-height: 60vh;
+        }
+
+        .image {
+            text-align: center;
+        }
+
+        .footer {
+            background-color: #844fba;
+            color: white;
+            text-align: center;
+            padding: 1rem 1rem;
+        }
+    </style>
+
+    <body>
+        <main class="wrapper">
+            {% if items %}
+            <header class="header" id="home">
+                <section class="header-container">
+                    <div>
+                        <h1>Image Recognition Processor</h1>
+                        <p>- Enabled By Terraform Cloud</p>
+                    </div>
+                    <img
+                        class="logo"
+                        src="https://www.datocms-assets.com/2885/1620155117-brandhcterraformverticalcolorwhite.svg"
+                        alt="tf-cloud-logo"
+                    />
+                </section>
+            </header>
+
+            <section class="main-content container">
+                {% for item in items %}
+                <div class="row">
+                    <div class="column image">
+                        <img src="/item/{{ item['image'].name }}" />
+                    </div>
+                    <div class="column">
+                        <p>
+                            Image labels: {{ item['data']['labels'] | join(',
+                            ')}}.
+                        </p>
+                        <p>
+                            Image Texts: {{ item['data']['texts'] | join(' ') |
+                            replace('\n', ' ') }}.
+                        </p>
+                        <p>
+                            {% for k in item['data']['image_details']%}{{k
+                            |title}}: {{item['data']['image_details'][k]}}. {%
+                            endfor %}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </section>
+            <footer class="footer">
+                <section class="container">
+                    <div class="row">
+                        <div class="column">
+                            <p>Terraform With Amie</p>
+                        </div>
+                    </div>
+                </section>
+            </footer>
+            {% else %}
+            <section class="container">
+                <div class="row">
+                    <div class="column">
+                        No images to process! Upload an image to the cloud
+                        storage bucket
+                    </div>
+                </div>
+            </section>
+            {% endif %}
+        </main>
+    </body>
+</html>
