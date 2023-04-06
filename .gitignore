@@ -5,6 +5,9 @@ modules/
 terraform.*
 .terraform
 
+#venv
+venv
+
 # Temporary function archives
 temp/
 
