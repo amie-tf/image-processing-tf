@@ -1,12 +1,14 @@
 # Image Processing Service
 
-To deploy using Terraform Cloud:
+Deployment Steps for Demo:
+
+## Github
 
 -   Clone project to your github repo
 
--   Create a new project on Google Cloud with [billing enabled](https://cloud.google.com/billing/docs/how-to/modify-project)
+## Google Cloud
 
--   Create account in Terraform Cloud and connect with VCS (Github)
+-   Create a new project on Google Cloud with [billing enabled](https://cloud.google.com/billing/docs/how-to/modify-project)
 
 -   Build the base service container (manual deployment for demo purposes):
 
@@ -14,12 +16,13 @@ To deploy using Terraform Cloud:
     gcloud builds submit
     ```
 
--   Initialize and apply the Terraform manifests:
+## Terraform Cloud (Automated VCS Deployment)
 
-    ```
-    terraform init
-    terraform apply
-    ```
+-   Create account in Terraform Cloud
+
+-   Set up Project and Workspace;
+
+-   Connect to Workspace with VCS (Github) and link to your Github repo
 
 ## Source
 
