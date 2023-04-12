@@ -1,8 +1,9 @@
 # Image Processing Service
 
-##_Architecture Diagram:_
+![Architecture diagram](architecture.png)
+A serverless solution to process images that is built from Google Cloud services and deployed with Terraform Cloud
 
-##_Deployment Steps [Demo Only]:_
+## Deployment Steps [Demo Only]:
 
 #### Github
 
