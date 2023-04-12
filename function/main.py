@@ -72,14 +72,11 @@ def detect_image(request):
     labels = response.label_annotations
     data["labels"] = [label.description for label in labels]
 
-    print('labels:')
-    print(labels)
 
     #detect texts
     texts = detect_text_uri(vision_image)
     data["texts"] = [text.description for text in texts[1:]]
-    print('data-texts:')
-    print(data["texts"])
+
 
     return jsonify(data)
 
