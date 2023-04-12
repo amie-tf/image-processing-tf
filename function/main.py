@@ -32,6 +32,12 @@ def detect_text_uri(vision_image):
     
     return texts
     
+def replace_newlines(text):
+# Convert to Unicode and replace newlines
+    unicode_text = text.encode('utf-8').decode('unicode_escape')
+    cleaned_text = unicode_text.replace('\n', ' ')
+    return cleaned_text
+
 def detect_image(request):
     """
     gets image from bucket and detects label
@@ -77,13 +83,13 @@ def detect_image(request):
 
     #detect texts
     texts = detect_text_uri(vision_image)
-    print('texts:')
-    print(texts)
-    print(texts[0])
+    # print('texts:')
+    # print(texts)
     text_string = texts[0].description
-    data["texts"] = text_string.replace("\n", " ")
+    print('text_string: ' + text_string)
+    data["texts"] = replace_newlines(text_string)
 
-    print(data)
+    print(data["texts"])
 
     return jsonify(data)
 
