@@ -21,3 +21,4 @@ docs/
 
 # creds
 **/sa-key.json
+.env
