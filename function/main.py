@@ -77,9 +77,13 @@ def detect_image(request):
 
     #detect texts
     texts = detect_text_uri(vision_image)
-    data["texts"] = [text.description for text in texts]
     print('texts:')
     print(texts)
+    print(texts[0])
+    text_string = texts[0].description
+    data["texts"] = text_string.replace("\n", " ")
+
+    print(data)
 
     return jsonify(data)
 
