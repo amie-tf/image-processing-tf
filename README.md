@@ -1,7 +1,7 @@
 # Image Processing Service
 
+This is a serverless solution that uses the Google Cloud Vision API to process images, and is deployed with Terraform Cloud.
 ![Architecture diagram](architecture.png)
-A serverless solution to process images that is built from Google Cloud services and deployed with Terraform Cloud
 
 ## Deployment Steps [Demo Only]:
 
@@ -12,6 +12,10 @@ A serverless solution to process images that is built from Google Cloud services
 #### Google Cloud
 
 -   Create a new project on Google Cloud with [billing enabled](https://cloud.google.com/billing/docs/how-to/modify-project)
+
+-   Create Terraform Service Account and provide with permissions to create infrastructure
+
+-   Enable APIs for in-scope services (Cloud Build, Container Registry, Cloud Run, Cloud Vision, Cloud Run, Cloud Functions)
 
 -   Build the base service container (manual deployment for demo purposes):
 
