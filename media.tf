@@ -1,5 +1,5 @@
 resource "random_string" "bucket_suffix" {
-  length  = 6
+  length  = 5
   special = false
   upper   = false
 }
