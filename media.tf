@@ -20,7 +20,6 @@ resource "google_storage_bucket_object" "images" {
 resource "google_storage_bucket_iam_policy" "media" {
   bucket = google_storage_bucket.media.name
 
-  # Generated with assistance from terraformer
   policy_data = <<POLICY
 {
   "bindings": [
