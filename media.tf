@@ -5,7 +5,7 @@ resource "random_string" "bucket_suffix" {
 }
 
 resource "google_storage_bucket" "media" {
-  name          = "${local.bucket_name}-${random_string.bucket_suffix.result}"
+  name          = "tf-${local.bucket_name}-${random_string.bucket_suffix.result}"
   force_destroy = true
 }
 

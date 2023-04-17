@@ -15,16 +15,19 @@ bucket = storage.bucket(BUCKET_NAME)
 
 @app.route("/item/<img>")
 def item(img):
+    #gets image from bucket
     blob = bucket.blob(img)
     with tempfile.NamedTemporaryFile() as temp:
         blob.download_to_filename(temp.name)
+        #sends back response to client in jinja template in img src
         return flask.send_file(temp.name, download_name=img)
 
 
 def get_items(bucket):
+    #list all the objects from bucket
     images = storage.list_blobs(BUCKET_NAME)
 
-    # auth when running a privte function
+    # auth when running a private function
     # https://cloud.google.com/functions/docs/securing/authenticating#functions-bearer-token-example-python
     if "cloudfunctions.net" in FUNCTION_NAME:
         metadata_server_url = "http://metadata/computeMetadata/v1/instance/service-accounts/default/identity?audience="
